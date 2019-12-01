@@ -1,0 +1,6 @@
+# import *,{Mutation} from "./generated/prisma.graphql"
+
+type Mutation {
+	login(username: String!, password: String!): User
+	createTodoListItemByUser(data: TodoListItemCreateInput!, userId: ID!): TodoListItem!
+}

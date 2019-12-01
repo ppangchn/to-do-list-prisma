@@ -1,0 +1,28 @@
+{
+	"name": "to-do-list-prisma",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"start": "ts-node index.ts",
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"dev": "ts-node-dev --no-notify --respawn --transpileOnly ./"
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"@types/bcrypt": "^3.0.0",
+		"@types/graphql": "^14.2.0",
+		"bcrypt": "^3.0.7",
+		"graphql": "^14.3.1",
+		"graphql-import": "^0.7.1",
+		"graphql-yoga": "^1.17.4",
+		"jsonwebtoken": "^8.5.1",
+		"prisma-client-lib": "^1.33.0"
+	},
+	"devDependencies": {
+		"ts-node": "^8.2.0",
+		"ts-node-dev": "^1.0.0-pre.44",
+		"typescript": "^3.7.2"
+	}
+}

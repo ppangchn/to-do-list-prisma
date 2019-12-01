@@ -1,0 +1,14 @@
+type User {
+  id: ID! @id
+  name: String!
+  username: String! @unique
+  password: String!
+  todoList: [TodoListItem]!
+
+}
+
+type TodoListItem {
+  id: ID! @id
+  description: String!
+  isCompleted: Boolean! @default(value:false)
+}
