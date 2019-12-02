@@ -5,8 +5,6 @@ import { User } from '../../generated/prisma-client';
 export const resolvers = {
 	User: {
 		todoList(parent: any, args: any, context: any) {
-			//parent is the root object (User is the parent here)
-
 			return prisma.user({ id: parent.id }).todoList();
 		},
 	},
@@ -16,9 +14,7 @@ export const resolvers = {
 		},
 		user: async (parent: any, { where }: any, context: any) => {
 			const { id } = where;
-			const temp = await context.prisma.user({ id });
-			console.log(temp);
-			return temp;
+			return context.prisma.user({ id });
 		},
 	},
 	Mutation: {
