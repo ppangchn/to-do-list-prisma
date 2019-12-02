@@ -21,12 +21,16 @@ export const resolvers = {
 		createUser: async (parent: any, { data }: any, context: any) => {
 			const { name, username, password } = data;
 			const hash = await bcrypt.hash(password, 10);
-			const user = await context.prisma.createUser({
-				password: hash,
-				name,
-				username,
-			});
-			return user;
+			try {
+				const user = await context.prisma.createUser({
+					password: hash,
+					name,
+					username,
+				});
+				return user;
+			} catch (error) {
+				throw new Error(`Username ${username} has already taken`);
+			}
 		},
 		login: async (parent: any, { username, password }: any, context: any) => {
 			const user = await context.prisma.user({ username });
